@@ -29,6 +29,6 @@ class Solution:
             result = max(0.0, z)
         else:
             result = z
-        return round(float(result), 5)
+        return round(result, 5)
         
 
