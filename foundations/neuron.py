@@ -14,21 +14,12 @@ class Solution:
         # ReLU: max(0, z)
         # return round(your_answer, 5)
         #pass
-        #z = np.dot(x, w) + b
-        #if activation == "sigmoid":
-        #    return np.round(1/(1+np.exp(-z)), 5)
-        #elif activation == "relu":
-        #    return np.round(np.maximum(0, z), 5)
-        #else:
-        #    return z
-        
         z = np.dot(x, w) + b
         if activation == "sigmoid":
-            result = 1.0 / (1.0 + np.exp(-z))
+            return np.round(1/(1+np.exp(-z)), 5)
         elif activation == "relu":
-            result = max(0.0, z)
+            return np.round(np.maximum(0, z), 5)
         else:
-            result = z
-        return round(result, 5)
+            return z
         
 
