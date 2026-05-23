@@ -27,7 +27,6 @@ class Solution:
         # Return np.round(final_weights, 5)
         #pass
         for _ in range(num_iterations):
-            
             predictions = self.get_model_prediction(X,initial_weights)
             for j in range(len(X[0])):
                 initial_weights[j] -= self.learning_rate * self.get_derivative(predictions,Y,len(X),X,j)
