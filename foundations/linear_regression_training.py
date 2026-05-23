@@ -9,7 +9,7 @@ class Solution:
 
     def get_model_prediction(self, X: NDArray[np.float64], weights: NDArray[np.float64]) -> NDArray[np.float64]:
         #return np.squeeze(np.matmul(X, weights))
-        return np.squeeze(np.matmul(X, weights))
+        return np.matmul(X, weights)
 
     learning_rate = 0.01
 
