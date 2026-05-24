@@ -15,8 +15,7 @@ class Solution:
         # Return: (dL_dw rounded to 5 decimals, dL_db rounded to 5 decimals)
         #pass
         z = np.dot(x, w) + b
-        y_hat = 1/ (1 + np.exp(-z)) #sigmoid(z)
-        L = 0.5 * np.square(y_hat - y_true)
+        y_hat = 1 / (1 + np.exp(-z)) #sigmoid(z)
         error = y_hat - y_true
         delta = error * (y_hat*(1 - y_hat))
         dL_dw = delta * x
