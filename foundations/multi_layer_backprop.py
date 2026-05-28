@@ -67,7 +67,7 @@ class Solution:
         #    'db2':   np.round(db2, 4)
         #}
         return {
-            'loss': np.round(loss, 4),#round(float(loss), 4),
+            'loss': float(np.round(loss, 4)),#round(float(loss), 4),
             'dW1': np.round(dW1, 4).tolist(),
             'db1': np.round(db1, 4).tolist(),
             'dW2': np.round(dW2, 4).tolist(),
