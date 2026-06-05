@@ -52,15 +52,17 @@ class Solution:
                 std = 1.0
             w = torch.randn(dims[i + 1], dims[i]) * std
             weights.append(w)
-        #print(f"weights = {weights[0]}, shape = {weights[0].shape}")
+        #print(f"weights[0] = {weights[0]}, shape = {weights[0].shape}")
         x = torch.randn(1, input_dim)
         #print(f"x = {x}, shape = {x.shape}")
         stds = []
+        #print(weights)
         for w in weights:
+            #print(f"w = {w}, shape = {w.shape}")
             x = x @ w.T
-            print(x)
+            #print(f"x = {x}, shape = {x.shape}")
             x = torch.relu(x)
-            print(x)
+            #print(x)
             stds.append(round(x.std().item(), 2))
             #print(stds)
 
