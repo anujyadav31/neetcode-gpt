@@ -27,7 +27,7 @@ class Solution:
         else:
             x_hat = (x - running_mean)/np.sqrt(running_var+eps)
         out = gamma * x_hat + beta
-        #print(f"x_hat = {x_hat}")
+        print(f"x_hat = {x_hat}")
         #print(f"out = {out}")
         #return
         return (np.round(out, 4).tolist(), np.round(running_mean, 4).tolist(), np.round(running_var, 4).tolist())
