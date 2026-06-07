@@ -28,6 +28,11 @@ class Solution:
         #pass
         for _ in range(num_iterations):
             predictions = self.get_model_prediction(X,initial_weights)
-            for j in range(len(X[0])):
-                initial_weights[j] -= self.learning_rate * self.get_derivative(predictions,Y,len(X),X,j)
+            #for j in range(len(X[0])):
+                #initial_weights[j] -= self.learning_rate * self.get_derivative(predictions,Y,len(X),X,j)
+            N = X.shape[0]
+            error = predictions - Y
+            dw = (2 / N) * (X.T @ error)
+
+            initial_weights -= self.learning_rate * dw        
         return np.round(initial_weights, 5)
