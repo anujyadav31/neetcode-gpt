@@ -39,4 +39,4 @@ class Solution:
             w = w - lr * dw
             b = b - lr * db
         return (np.round(w,5), np.round(b,5))
-        # see the difference of just X.T here and summation in Linear Regression(Training) for dw calculation. there we are calculating w's one by one. here we calculate all w's in one go.
+        # see the difference of just X.T here and summation in Linear Regression(Training) for dw calculation. there we are calculating dw's one by one. here we calculate all dw's in one go.
