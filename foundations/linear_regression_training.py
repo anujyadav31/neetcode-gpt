@@ -34,5 +34,5 @@ class Solution:
             error = predictions - Y
             dw = (2 / N) * (X.T @ error)
             initial_weights -= self.learning_rate * dw    
-            # line 33 to 37 to do all weight once like Trainig Loop.  
+            # line 33 to 37 to do all dw's in one go like Trainig Loop.  
         return np.round(initial_weights, 5)
