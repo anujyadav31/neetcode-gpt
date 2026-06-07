@@ -33,6 +33,6 @@ class Solution:
             N = X.shape[0]
             error = predictions - Y
             dw = (2 / N) * (X.T @ error)
-
-            initial_weights -= self.learning_rate * dw        
+            initial_weights -= self.learning_rate * dw    
+            # line 33 to 37 to do all weight once like Trainig Loop.  
         return np.round(initial_weights, 5)
