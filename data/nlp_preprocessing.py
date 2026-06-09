@@ -10,6 +10,18 @@ class Solution:
         # 3. Combine positive + negative into one list of tensors
         # 4. Pad shorter sequences with 0s using nn.utils.rnn.pad_sequence(tensors, batch_first=True)
         #pass
+        combined = positive + negative
+
+        # Build vocabulary: sorted unique words -> integer IDs starting at 1
+        vocabulary = sorted({word for sentence in combined for word in sentence.split()})
+        word_to_id = {word: idx + 1 for idx, word in enumerate(vocabulary)}
+
+        # Encode each sentence as a tensor of word IDs
+        encoded = [torch.tensor([word_to_id[w] for w in s.split()]) for s in combined]
+        #print(encoded)
+        # Pad shorter sequences with 0s so output is a rectangular tensor
+        return nn.utils.rnn.pad_sequence(encoded, batch_first=True)       
+        '''
         #print(positive)
         #print(negative)
         #print(positive + negative)
@@ -49,4 +61,4 @@ class Solution:
             for k in range(len(combined[i])):
                 combined[i][k]=float(combined[i][k])
         #print(combined)
-        return combined
+        return combined'''
