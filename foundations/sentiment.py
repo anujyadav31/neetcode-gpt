@@ -19,14 +19,14 @@ class Solution(nn.Module):
 
         # Return a B, 1 tensor and round to 4 decimal places
         #pass
-        print(f"x = {x}, x_shape = {x.shape}")
+        #print(f"x = {x}, x_shape = {x.shape}")
         embeddings = self.embedding_layer(x)
-        print(f"embeddings = {embeddings}, embeddings_shape = {embeddings.shape}")
+        #print(f"embeddings = {embeddings}, embeddings_shape = {embeddings.shape}")
         averaged = torch.mean(embeddings, dim=1)
-        print(f"averaged = {averaged}, averaged_shape = {averaged.shape}")
+        #print(f"averaged = {averaged}, averaged_shape = {averaged.shape}")
         projected = self.linear_layer(averaged)
-        print(f"projected = {projected}, projected_shape = {projected.shape}")
+        #print(f"projected = {projected}, projected_shape = {projected.shape}")
         z = torch.round(self.sigmoid_layer(projected), decimals=4)
-        print(f"output = {z}, z_shape = {z.shape}")
+        #print(f"output = {z}, z_shape = {z.shape}")
         return z#torch.round(self.sigmoid_layer(projected), decimals=4)
         
