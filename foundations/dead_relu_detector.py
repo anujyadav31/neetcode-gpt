@@ -37,8 +37,9 @@ class Solution:
             return 'reinitialize'
         k=1
         for i in range(len(dead_fractions)-1):
-            if dead_fractions[i] > dead_fractions[i+1]:
+            if dead_fractions[i] >= dead_fractions[i+1]:
                 k = 0
+                break
         if k and dead_fractions[-1] > 0.1:
             return 'reduce_learning_rate'
         if max_frac < 0.1:
