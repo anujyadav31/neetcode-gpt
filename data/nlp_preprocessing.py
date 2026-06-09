@@ -24,9 +24,9 @@ class Solution:
         for i in temp_voc:
             for k in range(len(i)):
                 vocabulary.append(i[k])
-        print(vocabulary)
+        #print(vocabulary)
         vocabulary = list(sorted(set(vocabulary)))
-        print(vocabulary)
+        #print(vocabulary)
         word_to_id = {word: idx+1 for idx, word in enumerate(vocabulary)}
         #print(word_to_id)
         for i in range(len(combined)):
