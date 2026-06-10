@@ -20,7 +20,7 @@ class Solution:
         #print(f"position = {position}, position_shape = {position.shape}")
         div_term = 10000 ** (np.arange(0, d_model, 2) / d_model) 
         #print(f"np.arange(0, d_model, 2) / d_model = {np.arange(0, d_model, 2) / d_model}")
-        print(f"div_term = {div_term}, div_term.shape = {div_term.shape}")
+        #print(f"div_term = {div_term}, div_term.shape = {div_term.shape}")
         #print(f"position / div_term = {position / div_term}")
         #print(f"np.sin(position / div_term) = {np.sin(position / div_term)}")
         PE[:, 0::2] = np.sin(position / div_term)          
