@@ -29,7 +29,7 @@ class SingleHeadAttention(nn.Module):
         q = self.query_gen(embedded) # (B, T, attention_dim)
         #print(f"q = {q}, q_shape = {q.shape}")
         v = self.value_gen(embedded) # (B, T, attention_dim)
-        print(f"v = {v}, v_shape = {v.shape}")
+        #print(f"v = {v}, v_shape = {v.shape}")
 
         # Attention scores: (Q @ K^T) / sqrt(d_k)
         scores = q @ torch.transpose(k, 1, 2)
@@ -50,7 +50,7 @@ class SingleHeadAttention(nn.Module):
         scores = scores.masked_fill(mask, float('-inf'))
         #print(f"scores = {scores}, scores_shape = {scores.shape}")
         scores = nn.functional.softmax(scores, dim=2)
-        print(f"scores = {scores}, scores_shape = {scores.shape}")
-        t = torch.round(scores @ v, decimals=4)
-        print(f"t = {t}, t_shape = {t.shape}")
-        return t
+        #print(f"scores = {scores}, scores_shape = {scores.shape}")
+        score_x_v = torch.round(scores @ v, decimals=4)
+        #print(f"score_x_v = {score_x_v}, score_x_v = {score_x_v.shape}")
+        return score_x_v
