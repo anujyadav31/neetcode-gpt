@@ -17,13 +17,14 @@ class Solution:
         PE = np.zeros((seq_len,d_model))
         #print(PE)
         position = np.arange(seq_len).reshape(-1, 1)
-        print(f"position = {position}, position_shape = {position.shape}")
+        #print(f"position = {position}, position_shape = {position.shape}")
         div_term = 10000 ** (np.arange(0, d_model, 2) / d_model) 
         #print(f"np.arange(0, d_model, 2) / d_model = {np.arange(0, d_model, 2) / d_model}")
-        #print(f"div_term = {div_term}, div_term.shape = {div_term.shape}")
+        print(f"div_term = {div_term}, div_term.shape = {div_term.shape}")
         #print(f"position / div_term = {position / div_term}")
         #print(f"np.sin(position / div_term) = {np.sin(position / div_term)}")
-        PE[:, 0::2] = np.sin(position / div_term)           # Even indices: sine
-        PE[:, 1::2] = np.cos(position / div_term)  # Odd indices: cosine
+        PE[:, 0::2] = np.sin(position / div_term)          
+        PE[:, 1::2] = np.cos(position / div_term)  
+        #print(div_term[:PE[:, 1::2].shape[1]])
         return np.round(PE, 5)        
-        #pass
+        
