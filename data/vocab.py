@@ -17,7 +17,7 @@ class Solution:
 
     def encode(self, text: str, stoi: Dict[str, int]) -> List[int]:
         # Convert a string to a list of integers using stoi mapping
-        self.build_vocab(text)
+        #self.build_vocab(text)
         #pass
         #a=[stoi[ch] for ch in text]
         #print(f"a = {a}")
