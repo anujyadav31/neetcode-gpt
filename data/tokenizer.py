@@ -28,8 +28,8 @@ class Solution:
                 pairs[pair] = pairs.get(pair, 0) + 1
                 #print(f"pairs = {pairs}")
 
-            if not pairs:
-                break
+            #if not pairs:
+                #break
 
             # Find most frequent pair (tiebreak: lexicographically smallest)
             best_count = max(pairs.values())
