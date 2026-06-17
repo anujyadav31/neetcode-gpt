@@ -11,7 +11,7 @@ class Solution:
         #pass
         tokenized = raw_dataset.split()
         #print(f"tokenized = {tokenized}")
-        indices = torch.randint(low=0, high=len(tokenized) - context_length, size=(batch_size,)).tolist()
+        indices = torch.randint(low=0, high=len(tokenized) - context_length, size=(batch_size,))#.tolist()
         #print(f"indices = {indices}")
         X = []
         Y = []
