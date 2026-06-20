@@ -11,7 +11,12 @@ class Solution:
         # For each epoch: seed with torch.manual_seed(epoch),
         # sample batches from data, run forward/backward, update weights.
         # Return the final loss rounded to 4 decimals.
-        #print(model)
+        print(f"model = {model}")
+        print("............................................")
+        print(f"data = {data}")
+        print("............................................")
+        print(f"data.shape = {data.shape}")
+        print("............................................")
         optimizer = torch.optim.AdamW(model.parameters(), lr=lr)
         for epoch in range(epochs):
             torch.manual_seed(epoch)
